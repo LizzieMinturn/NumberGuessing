@@ -13,19 +13,23 @@ public class NumberGuessing {
         pickedNumber = (int)(Math.random()*100);
 
         System.out.println("Choose a number between 1 and 100");
+
+        boolean win = false;
+        while (win == false) {
+
         enteredNumber = keyboard.nextInt();
-        System.out.println(pickedNumber);
+        int numberOfTries = 0;
+        numberOfTries++;
 
-        if(enteredNumber>pickedNumber){
-            System.out.println("Too high");
-        }
-        
-        else if(enteredNumber<pickedNumber){
-            System.out.println("Too low");
-        }
 
-        else if(enteredNumber==pickedNumber){
-            System.out.println("Correct!");
+            if (enteredNumber > pickedNumber) {
+                System.out.println("Too high, try again");
+            } else if (enteredNumber < pickedNumber) {
+                System.out.println("Too low, try again");
+            } else if (enteredNumber == pickedNumber) {
+                System.out.println("Correct!");
+                win = true;
+            }
         }
     }
 }
